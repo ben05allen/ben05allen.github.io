@@ -13,5 +13,5 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/svg", href: "/favicon.svg" }],
     },
   },
-  modules: [],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/content"],
 });
