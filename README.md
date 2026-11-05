@@ -58,7 +58,7 @@ _layouts/            default, home, page, post
 _includes/           head, header, footer, post list/meta, theme toggle
 _posts/              published posts
 _drafts/             unpublished posts (never built by Pages)
-assets/css/main.scss theme styles (light + dark, Rouge tokens)
+assets/css/style.scss theme styles (light + dark, Rouge tokens)
 assets/favicon.svg   favicon
 index.md             home page
 writing/             full archive (/writing/)
@@ -87,5 +87,10 @@ root and `baseurl` stays empty.
 ## Theme
 
 Hand-written, no theme gem. Design tokens are CSS custom properties at the top
-of `assets/css/main.scss`; dark mode follows `prefers-color-scheme` and can be
+of `assets/css/style.scss`; dark mode follows `prefers-color-scheme` and can be
 overridden with the header toggle (stored in `localStorage`).
+
+`assets/css/style.scss` is deliberately at the conventional theme path: GitHub
+Pages' build loads the `jekyll-theme-primer` gem (a `github-pages` dependency)
+and would otherwise publish its ~76 kB stylesheet. This repo's file shadows it,
+so `/assets/css/style.css` is the only stylesheet the site ships.
