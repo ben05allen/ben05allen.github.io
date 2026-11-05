@@ -8,6 +8,8 @@ description: >-
   Personal blog of Ben Allen — writing about software engineering, tooling,
   and the occasional side project.
 author: Ben Allen
+# Single source of truth for the mailto links in the footer and on /about/.
+email: bnln@tb.pro
 
 # This is a GitHub Pages *user site*, so it is served from the domain root.
 url: "https://ben05allen.github.io"

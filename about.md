@@ -15,7 +15,7 @@ Everything here is my own opinion, not my employer's.
 ## Elsewhere
 
 - GitHub: [@ben05allen](https://github.com/ben05allen)
-- Email: [hello@example.com](mailto:hello@example.com)
+- Email: [{{ site.email }}](mailto:{{ site.email }})
 
 ## About this site
 
