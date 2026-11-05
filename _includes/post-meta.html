@@ -1,0 +1,13 @@
+<p class="post-meta">
+  <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+  {% assign words = page.content | strip_html | number_of_words %}
+  {% assign minutes = words | divided_by: 200 | at_least: 1 %}
+  <span aria-hidden="true">·</span> {{ minutes }} min read
+  {% if page.tags.size > 0 %}
+    <span class="post-meta__tags">
+      {% for tag in page.tags %}
+        <a class="tag" href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
+      {% endfor %}
+    </span>
+  {% endif %}
+</p>

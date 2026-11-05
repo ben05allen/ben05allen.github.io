@@ -1,0 +1,79 @@
+# ---------------------------------------------------------------------------
+# Site settings
+# https://jekyllrb.com/docs/configuration/
+# ---------------------------------------------------------------------------
+title: Ben Allen
+tagline: Notes on software, systems, and things I'm building.
+description: >-
+  Personal blog of Ben Allen — writing about software engineering, tooling,
+  and the occasional side project.
+author: Ben Allen
+
+# This is a GitHub Pages *user site*, so it is served from the domain root.
+url: "https://ben05allen.github.io"
+baseurl: ""
+
+lang: en
+timezone: Etc/UTC
+
+# Pretty post URLs: /2025/11/05/welcome/
+permalink: /:year/:month/:day/:title/
+
+# ---------------------------------------------------------------------------
+# Build settings
+# ---------------------------------------------------------------------------
+markdown: kramdown
+highlighter: rouge
+future: false
+show_drafts: false
+
+sass:
+  style: compressed
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
+
+# All of these are on the GitHub Pages plugin allow-list, so the built-in
+# GitHub build (no CI required) supports them.
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+# Files that should never end up on the published site.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
+  - README.md
+  - docker-compose.yml
+  - node_modules
+  - vendor
+  - .github
+
+# ---------------------------------------------------------------------------
+# Defaults
+# ---------------------------------------------------------------------------
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page

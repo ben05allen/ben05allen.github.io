@@ -1,0 +1,27 @@
+services:
+  site:
+    image: jekyll/jekyll:4
+    command: >
+      jekyll serve
+      --watch
+      --force_polling
+      --drafts
+      --host 0.0.0.0
+      --port 4000
+      --livereload
+    ports:
+      - "4000:4000"
+      - "35729:35729"
+    # Run as the host user so generated files aren't root-owned.
+    user: "${UID:-1000}:${GID:-1000}"
+    environment:
+      JEKYLL_ENV: development
+      # No passwd entry for the host uid, so point HOME somewhere writable.
+      HOME: /srv/jekyll
+    volumes:
+      - .:/srv/jekyll
+      - bundle:/usr/local/bundle
+    working_dir: /srv/jekyll
+
+volumes:
+  bundle:

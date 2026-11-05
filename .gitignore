@@ -1,24 +1,23 @@
-# Nuxt dev/build outputs
-.output
-.data
-.nuxt
-.nitro
-.cache
-dist
+# Jekyll build output
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
 
-# Node dependencies
-node_modules
+# Bundler / gems
+vendor/
+.bundle/
+
+# Local env files
+.env
+.env.*
 
 # Logs
 logs
 *.log
 
-# Misc
+# Editor / OS noise
 .DS_Store
 .fleet
 .idea
-
-# Local env files
-.env
-.env.*
-!.env.example
+.vscode

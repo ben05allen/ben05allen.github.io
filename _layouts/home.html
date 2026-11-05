@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="home">
+  <section class="home__intro">
+    <h1 class="home__title">{{ page.heading | default: site.title }}</h1>
+    <p class="home__tagline">{{ page.tagline | default: site.tagline }}</p>
+    {{ content }}
+  </section>
+
+  <section class="home__posts" aria-labelledby="recent-posts">
+    <h2 class="section-title" id="recent-posts">Recent writing</h2>
+    {% assign recent = site.posts | limit: 8 %}
+    {% if recent.size > 0 %}
+      {% include post-list.html posts=recent %}
+      {% if site.posts.size > recent.size %}
+        <p class="more-link"><a href="{{ '/writing/' | relative_url }}">All posts &rarr;</a></p>
+      {% endif %}
+    {% else %}
+      <p class="empty">No posts yet. The first one is on its way.</p>
+    {% endif %}
+  </section>
+</div>

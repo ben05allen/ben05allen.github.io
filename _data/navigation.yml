@@ -1,0 +1,12 @@
+- title: Writing
+  url: /writing/
+  match: /writing/
+- title: Tags
+  url: /tags/
+  match: /tags/
+- title: Projects
+  url: /projects/
+  match: /projects/
+- title: About
+  url: /about/
+  match: /about/
