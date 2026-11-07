@@ -16,7 +16,7 @@ url: "https://ben05allen.github.io"
 baseurl: ""
 
 lang: en
-timezone: Etc/UTC
+timezone: Asia/Tokyo
 
 # Pretty post URLs: /2025/11/05/welcome/
 permalink: /:year/:month/:day/:title/

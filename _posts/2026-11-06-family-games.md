@@ -2,7 +2,7 @@
 layout: post
 title: "Kids, and keeping them off devices"
 subtitle: How I manage to sneak in an English lesson
-date: 2026-11-06 21:00:00 +0000
+date: 2026-11-06 21:00:00 +0900
 tags: [meta, writing]
 summary: A short note about spending time with my kids.
 ---
