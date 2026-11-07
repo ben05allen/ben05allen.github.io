@@ -1,0 +1,14 @@
+{
+  "name": "ben05allen.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal Jekyll site — dev tooling only, the site itself is built by GitHub Pages.",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@shopify/prettier-plugin-liquid": "^1.11.4",
+    "prettier": "^3.9.10"
+  }
+}

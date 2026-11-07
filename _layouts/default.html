@@ -1,15 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ site.lang | default: 'en' }}">
   {% include head.html %}
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     {% include header.html %}
 
-    <main id="main" class="site-main">
-      {{ content }}
-    </main>
+    <main id="main" class="site-main">{{ content }}</main>
 
-    {% include footer.html %}
-    {% include theme-toggle-script.html %}
+    {% include footer.html %} {% include theme-toggle-script.html %}
   </body>
 </html>

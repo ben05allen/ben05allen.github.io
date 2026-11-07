@@ -1,0 +1,55 @@
+---
+layout: page
+title: Tags
+subtitle: Browse posts by topic.
+permalink: /tags/
+---
+
+{% if site.tags.size > 0 %}
+<ul class="tag-cloud" id="tag-cloud">
+  {% assign sorted_tags = site.tags | sort %} {% for tag in sorted_tags %}
+  <li>
+    <a class="tag" href="#{{ tag[0] | slugify }}" data-tag="{{ tag[0] | downcase }}">
+      {{- tag[0] }} <span class="tag-cloud__count">{{ tag[1].size }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% for tag in sorted_tags %} {% assign name = tag[0] %} {% assign posts = tag[1] %}
+<section class="tag-section" id="{{ name | slugify }}" data-tag-section="{{ name | downcase }}">
+  <h2 class="tag-section__title">{{ name }}</h2>
+  <ul>
+    {% for post in posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <time datetime="{{ post.date | date_to_xmlschema }}">
+        {{- post.date | date: "%b %-d, %Y" -}}
+      </time>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
+
+<script>
+  (function () {
+    var links = document.querySelectorAll("#tag-cloud a");
+    links.forEach(function (link) {
+      link.addEventListener("click", function () {
+        var id = link.getAttribute("href").slice(1);
+        var target = document.getElementById(id);
+        if (target) {
+          target.style.transition = "background-color 0.6s";
+          target.style.backgroundColor = "var(--accent-soft)";
+          setTimeout(function () {
+            target.style.backgroundColor = "";
+          }, 1200);
+        }
+      });
+    });
+  })();
+</script>
+{% else %}
+<p class="empty">No tags yet — tags appear here once posts use them.</p>
+{% endif %}

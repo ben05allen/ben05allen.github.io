@@ -17,11 +17,11 @@
   --code-bg: #f6f2ea;
   --selection: rgba(180, 83, 26, 0.18);
 
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
-    "Liberation Mono", monospace;
+  --font-mono:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
   --measure: 42rem;
 }
@@ -600,13 +600,18 @@ hr {
 .highlight .c,
 .highlight .cm,
 .highlight .c1,
-.highlight .cs { color: #8a8578; font-style: italic; }
+.highlight .cs {
+  color: #8a8578;
+  font-style: italic;
+}
 .highlight .k,
 .highlight .kd,
 .highlight .kn,
 .highlight .kp,
 .highlight .kr,
-.highlight .kt { color: #a1357f; }
+.highlight .kt {
+  color: #a1357f;
+}
 .highlight .s,
 .highlight .sb,
 .highlight .sc,
@@ -617,42 +622,69 @@ hr {
 .highlight .sh,
 .highlight .si,
 .highlight .sx,
-.highlight .sr { color: #2f7d32; }
+.highlight .sr {
+  color: #2f7d32;
+}
 .highlight .m,
 .highlight .mf,
 .highlight .mh,
 .highlight .mi,
 .highlight .mo,
-.highlight .il { color: #b4531a; }
+.highlight .il {
+  color: #b4531a;
+}
 .highlight .nf,
 .highlight .nv,
 .highlight .vc,
 .highlight .vg,
-.highlight .vi { color: #1f5fa8; }
+.highlight .vi {
+  color: #1f5fa8;
+}
 .highlight .nb,
-.highlight .bp { color: #7a5c00; }
+.highlight .bp {
+  color: #7a5c00;
+}
 .highlight .nc,
-.highlight .nn { color: #8a4b00; }
+.highlight .nn {
+  color: #8a4b00;
+}
 .highlight .o,
-.highlight .ow { color: #5a5a5a; }
-.highlight .gd { color: #b3261e; }
-.highlight .gi { color: #2f7d32; }
-.highlight .err { color: #b3261e; }
+.highlight .ow {
+  color: #5a5a5a;
+}
+.highlight .gd {
+  color: #b3261e;
+}
+.highlight .gi {
+  color: #2f7d32;
+}
+.highlight .err {
+  color: #b3261e;
+}
 .highlight .gh,
-.highlight .gu { color: #8a8578; font-weight: 600; }
-.highlight .gs { font-weight: 600; }
+.highlight .gu {
+  color: #8a8578;
+  font-weight: 600;
+}
+.highlight .gs {
+  font-weight: 600;
+}
 
 :root[data-theme="dark"] .highlight .c,
 :root[data-theme="dark"] .highlight .cm,
 :root[data-theme="dark"] .highlight .c1,
-:root[data-theme="dark"] .highlight .cs { color: #8a8578; }
+:root[data-theme="dark"] .highlight .cs {
+  color: #8a8578;
+}
 
 :root[data-theme="dark"] .highlight .k,
 :root[data-theme="dark"] .highlight .kd,
 :root[data-theme="dark"] .highlight .kn,
 :root[data-theme="dark"] .highlight .kp,
 :root[data-theme="dark"] .highlight .kr,
-:root[data-theme="dark"] .highlight .kt { color: #d9a6d0; }
+:root[data-theme="dark"] .highlight .kt {
+  color: #d9a6d0;
+}
 
 :root[data-theme="dark"] .highlight .s,
 :root[data-theme="dark"] .highlight .sb,
@@ -664,29 +696,41 @@ hr {
 :root[data-theme="dark"] .highlight .sh,
 :root[data-theme="dark"] .highlight .si,
 :root[data-theme="dark"] .highlight .sx,
-:root[data-theme="dark"] .highlight .sr { color: #a3d9a5; }
+:root[data-theme="dark"] .highlight .sr {
+  color: #a3d9a5;
+}
 
 :root[data-theme="dark"] .highlight .m,
 :root[data-theme="dark"] .highlight .mf,
 :root[data-theme="dark"] .highlight .mh,
 :root[data-theme="dark"] .highlight .mi,
 :root[data-theme="dark"] .highlight .mo,
-:root[data-theme="dark"] .highlight .il { color: #f0b98a; }
+:root[data-theme="dark"] .highlight .il {
+  color: #f0b98a;
+}
 
 :root[data-theme="dark"] .highlight .nf,
 :root[data-theme="dark"] .highlight .nv,
 :root[data-theme="dark"] .highlight .vc,
 :root[data-theme="dark"] .highlight .vg,
-:root[data-theme="dark"] .highlight .vi { color: #9dc4f0; }
+:root[data-theme="dark"] .highlight .vi {
+  color: #9dc4f0;
+}
 
 :root[data-theme="dark"] .highlight .nb,
-:root[data-theme="dark"] .highlight .bp { color: #e5d08a; }
+:root[data-theme="dark"] .highlight .bp {
+  color: #e5d08a;
+}
 
 :root[data-theme="dark"] .highlight .nc,
-:root[data-theme="dark"] .highlight .nn { color: #f0b98a; }
+:root[data-theme="dark"] .highlight .nn {
+  color: #f0b98a;
+}
 
 :root[data-theme="dark"] .highlight .o,
-:root[data-theme="dark"] .highlight .ow { color: #b8b2a7; }
+:root[data-theme="dark"] .highlight .ow {
+  color: #b8b2a7;
+}
 
 /* ==========================================================================
    Tags page

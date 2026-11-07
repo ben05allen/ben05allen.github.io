@@ -5,8 +5,6 @@ subtitle: Everything I've published, newest first.
 permalink: /writing/
 ---
 
-{% if site.posts.size > 0 %}
-  {% include post-list.html posts=site.posts %}
-{% else %}
-  <p class="empty">No posts yet.</p>
+{% if site.posts.size > 0 %} {% include post-list.html posts=site.posts %} {% else %}
+<p class="empty">No posts yet.</p>
 {% endif %}

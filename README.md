@@ -8,14 +8,17 @@ to `master`. Everything here uses only plugins on the GitHub Pages allow-list.
 
 ## Local development
 
-Ruby is **not** installed on this machine — everything runs in Docker.
+Ruby is **not** installed on this machine — the site itself runs in Docker.
+The only host dependency is Node (used for formatting).
 
 ```bash
 make install   # first run: resolves gems inside the container
-make serve     # http://localhost:4000, live reload, published posts only
+make serve     # http://localhost:3000, live reload, published posts only
 make drafts    # same, but includes _drafts/ and future-dated posts
 make build     # production build into _site/
 make clean     # drop _site/ and caches
+make fmt       # format Markdown, YAML, Liquid templates and SCSS
+make fmt-check # verify formatting without writing (CI-friendly)
 ```
 
 `make serve` runs `docker compose up`, so `Ctrl-C` stops it. Gems are cached in
@@ -48,6 +51,18 @@ Promote a draft when it's ready:
 ```bash
 git mv _drafts/an-unfinished-idea.md _posts/2025-11-08-an-unfinished-idea.md
 ```
+
+## Formatting
+
+[Prettier](https://prettier.io) with
+[`@shopify/prettier-plugin-liquid`](https://github.com/Shopify/prettier-plugin-liquid)
+formats Markdown (including post front matter), YAML, SCSS, JSON, and the Liquid
+HTML templates in `_layouts/`, `_includes/`, and `writing/`. Config lives in
+`.prettierrc`; build output and lock files are listed in `.prettierignore`.
+
+Run `make fmt` before committing, or `npm install && make fmt-check` after a
+fresh clone (dependencies live in `package.json`). It formats every file in the
+repo, so running it on a fresh clone should report no changes.
 
 ## Structure
 

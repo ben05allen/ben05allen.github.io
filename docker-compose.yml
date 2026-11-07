@@ -10,7 +10,8 @@ services:
       --port 4000
       --livereload
     ports:
-      - "4000:4000"
+      # Host port 3000 (allow-listed) -> Jekyll's 4000 inside the container.
+      - "3000:4000"
       - "35729:35729"
     # Run as the host user so generated files aren't root-owned.
     user: "${UID:-1000}:${GID:-1000}"

@@ -22,7 +22,7 @@ readable without line lengths sprawling across a wide monitor.
 
 ## Text formatting
 
-You can **bold**, *italicise*, ~~strike through~~, and use `inline code`. Links
+You can **bold**, _italicise_, ~~strike through~~, and use `inline code`. Links
 look like [this one](https://jekyllrb.com/docs/).
 
 ## Lists
@@ -68,11 +68,11 @@ console.log(posts.querySelectorAll("item").length, "posts");
 
 ## Tables
 
-| Element | Supported | Notes                     |
-| ------- | --------- | ------------------------- |
-| Tables  | Yes       | Scrolls horizontally      |
-| Images  | Yes       | Rounded corners           |
-| Notes   | Yes       | Footnotes via kramdown    |
+| Element | Supported | Notes                  |
+| ------- | --------- | ---------------------- |
+| Tables  | Yes       | Scrolls horizontally   |
+| Images  | Yes       | Rounded corners        |
+| Notes   | Yes       | Footnotes via kramdown |
 
 ## Blockquotes
 

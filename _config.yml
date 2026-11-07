@@ -60,6 +60,8 @@ exclude:
   - Makefile
   - README.md
   - docker-compose.yml
+  - package.json
+  - package-lock.json
   - node_modules
   - vendor
   - .github

@@ -8,6 +8,9 @@ _site/
 vendor/
 .bundle/
 
+# Node tooling (Prettier)
+node_modules/
+
 # Local env files
 .env
 .env.*

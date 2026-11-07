@@ -6,7 +6,7 @@ SERVICE ?= site
 
 .DEFAULT_GOAL := help
 
-.PHONY: help install serve drafts build clean shell publish
+.PHONY: help install serve drafts build clean shell fmt fmt-check publish
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
@@ -15,7 +15,7 @@ help: ## Show this help
 install: ## Install/refresh gems inside the container
 	$(COMPOSE) run --rm $(SERVICE) bundle install && $(COMPOSE) run --rm $(SERVICE) bundle exec jekyll --version
 
-serve: ## Serve at http://localhost:4000 with live reload (published posts only)
+serve: ## Serve at http://localhost:3000 with live reload (published posts only)
 	$(COMPOSE) up $(SERVICE)
 
 drafts: ## Serve including _drafts/ and future-dated posts
@@ -31,6 +31,12 @@ shell: ## Open a shell in the container
 
 clean: ## Remove build output and caches
 	rm -rf _site .jekyll-cache .jekyll-metadata
+
+fmt: ## Format Markdown, YAML, Liquid templates and SCSS with Prettier
+	npm run format
+
+fmt-check: ## Check formatting without writing files (CI-friendly)
+	npm run format:check
 
 publish: ## Commit everything and push to GitHub Pages
 	git add -A

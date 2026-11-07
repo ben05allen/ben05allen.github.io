@@ -1,22 +1,26 @@
 <ul class="post-list">
   {% for post in include.posts %}
-    <li class="post-list__item">
-      <a class="post-list__link" href="{{ post.url | relative_url }}">
-        <span class="post-list__title">{{ post.title }}</span>
-      </a>
-      <span class="post-list__meta">
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-        {% assign words = post.content | strip_html | number_of_words %}
-        {% assign minutes = words | divided_by: 200 | at_least: 1 %}
-        <span aria-hidden="true">·</span> {{ minutes }} min read
-      </span>
-      {% if post.summary %}
-        <p class="post-list__summary">{{ post.summary }}</p>
-      {% elsif post.description %}
-        <p class="post-list__summary">{{ post.description }}</p>
-      {% else %}
-        <p class="post-list__summary">{{ post.excerpt | strip_html | strip_newlines | truncate: 190 }}</p>
-      {% endif %}
-    </li>
+  <li class="post-list__item">
+    <a class="post-list__link" href="{{ post.url | relative_url }}">
+      <span class="post-list__title">{{ post.title }}</span>
+    </a>
+    <span class="post-list__meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}"
+        >{{ post.date | date: "%b %-d, %Y" }}</time
+      >
+      {% assign words = post.content | strip_html | number_of_words %} {% assign minutes = words |
+      divided_by: 200 | at_least: 1 %}
+      <span aria-hidden="true">·</span> {{ minutes }} min read
+    </span>
+    {% if post.summary %}
+    <p class="post-list__summary">{{ post.summary }}</p>
+    {% elsif post.description %}
+    <p class="post-list__summary">{{ post.description }}</p>
+    {% else %}
+    <p class="post-list__summary">
+      {{ post.excerpt | strip_html | strip_newlines | truncate: 190 }}
+    </p>
+    {% endif %}
+  </li>
   {% endfor %}
 </ul>
