@@ -10,9 +10,9 @@ people know me for: riding bikes, and being a bit of a (computer) geek. I have
 a background in finance which has taken me around the world from New Zealand and
 Australia to London and Hong Kong, and now Japan.
 
-Nowadays, family is the part of my life that matters most, and a good chunk of it
-happens around a table: board games with my kids, several nights a week, with
-an Uno deck that is as much sellotape as card.
+Nowadays, family is the part of my life that matters most, and one of the most fun parts of that
+often happens around a table: board games with my kids, several nights a week, with
+an Uno deck that is as much cellotape as card, as well as an extra blue 7 somehow.
 
 Python is my home language and the intersection of Python with Rust is where I
 think it really gets interesting. The cliche is true, came for the language, stayed
