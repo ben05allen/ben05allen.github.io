@@ -4,7 +4,7 @@ title: "Python's Proposed None-coalescing Operator"
 subtitle: An oddly timed, but useful addition.
 date: 2026-11-25 23:00:00 +0900
 tags: [python]
-summary: This article introduces Pythons new None-coalescing operator, and considers how computer languages evolve.
+summary: This article introduces Python's new None-coalescing operator, and considers how computer languages evolve.
 ---
 
 British linguist David Crystal wrote that the only languages that do not change are dead ones.
@@ -22,21 +22,21 @@ introduced by _Python Enhancement Proposals_ (PEPs), which the Python Steering C
 accept. Python's model of proposal and acceptance is now the blueprint for many other languages; Java
 shamelessly has JEPs no less! The difference normally comes down to who makes the final call. In
 Python's case it took the maelstrom around the walrus operator `:=` to shift responsibility from one person, Guido van
-Rossum (the so-called benevolent dictator for life), to the now five-person steering committee.
+Rossum (the so-called benevolent dictator for life), to the now five-person Steering Council.
 Beatles fans will approve, koo koo ka choo.
 
 One of the common ways that a computer language evolves is through the introduction of "syntactic sugar" - think
-optional chaining in TypeScipt with `user?.profile?.email` or list comprehensions in Python `[x * 2 for x in range(5)]`. As
+optional chaining in TypeScript with `user?.profile?.email` or list comprehensions in Python `[x * 2 for x in range(5)]`. As
 the name suggests these are features that make code easier for people to write and, perhaps more importantly, to read.
 
-Of the current PEPs under consideration, one is PEP 824, None-coalescing operators - a live example of Python
+Of the current PEPs under consideration, one is [PEP 824](https://peps.python.org/pep-0824/), None-coalescing operators - a live example of Python
 evolution happening, if you will. The author has introduced two new operators `??` and `??=`, called the
 None-coalescing operator and the None-coalescing assignment operator.
 Reading `a ?? b` aloud might be voiced as "a or-else b". This operator occurs in other computer languages, for example JavaScript and C#,
 where there is a concept of `null` or `None`. In Polars, the expression `pl.coalesce()` is similar.
 
 For now, let's just consider the first proposed operator, the None-coalescing operator, `??`. At
-the time of writing only this is likely be adopted by the Steering Council. The idea behind
+the time of writing only this is likely to be adopted by the Steering Council. The idea behind
 this new operator is that Pythonistas will have a test for `None` going forward, rather than
 using `or` which can only test for a falsy value.
 
@@ -57,7 +57,7 @@ c or d
 In Python, `0` is _falsy_, which can be problematic if you're checking for the existence of a value which
 might actually be `0`.
 
-However, the `??` operator allows us to only test for None:
+However, the `??` operator allows us to only test for `None`:
 
 ```[Python]
 a = None
@@ -71,8 +71,8 @@ c ?? d
 # is 0
 ```
 
-As a definition `a ?? b` is syntactic sugar for `_t if ((_t := a) is not None) else b`, which alone
-justifies the change, at least to my way of thinking,
+By definition `a ?? b` is syntactic sugar for `_t if ((_t := a) is not None) else b`, which alone
+justifies the change, at least to my way of thinking.
 
 Not only is it shorter, and easier to understand, but the proposed change allows one to avoid the trap of
 false negatives with `or`.
@@ -81,8 +81,8 @@ false negatives with `or`.
 
 As PEP 824 points out, this change was proposed over eleven years ago as PEP 505.
 
-Earlier this year PEP 661 introduced a new mechanism for creating _sentinel values_ into Python 3.15. Part of the motivation
-for that PEP was to encourage testing for sentinels rather than `None`.
+Earlier this year [PEP 661](https://peps.python.org/pep-0661/) introduced a new mechanism for creating _sentinel values_ into Python 3.15,
+making it easier to use alternatives to `None`.
 Python has had over a decade to introduce the `??` operator. Doing so now seems oddly timed.
 
 Stepping back, in the new world of agentic coding where the wider adoption of new language features
