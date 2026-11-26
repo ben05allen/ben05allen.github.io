@@ -31,7 +31,7 @@ the name suggests these are features that make code easier for people to write a
 
 Of the current PEPs under consideration, one is [PEP 824](https://peps.python.org/pep-0824/), None-coalescing operators - a live example of Python
 evolution happening, if you will. The author has introduced two new operators `??` and `??=`, called the
-None-coalescing operator and the None-coalescing assignment operator.
+_None-coalescing operator_ and the _None-coalescing assignment operator_.
 Reading `a ?? b` aloud might be voiced as "a or-else b". This operator occurs in other computer languages, for example JavaScript and C#,
 where there is a concept of `null` or `None`. In Polars, the expression `pl.coalesce()` is similar.
 
@@ -42,7 +42,7 @@ using `or` which can only test for a falsy value.
 
 Using Python's common `or` operator we have:
 
-```[Python]
+```Python
 a = None
 b = 1
 a or b
@@ -59,7 +59,7 @@ might actually be `0`.
 
 However, the `??` operator allows us to only test for `None`:
 
-```[Python]
+```Python
 a = None
 b = 1
 a ?? b
