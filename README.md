@@ -6,24 +6,40 @@ served by GitHub Pages at **https://ben05allen.github.io**.
 No build pipeline, no CI: GitHub Pages runs its own Jekyll build on every push
 to `master`. Everything here uses only plugins on the GitHub Pages allow-list.
 
-## Local development
+## First-time setup
 
-Ruby is **not** installed on this machine — the site itself runs in Docker.
-The only host dependency is Node (used for formatting).
+Install Git, Make, Docker with the Compose plugin (`docker compose`), and
+Node.js with npm. Start Docker before running the setup commands. Jekyll and
+Ruby run inside Docker.
 
 ```bash
-make install   # first run: resolves gems inside the container
-make serve     # http://localhost:3000, live reload, published posts only
-make drafts    # same, but includes _drafts/ and future-dated posts
+git clone https://github.com/ben05allen/ben05allen.github.io.git
+cd ben05allen.github.io
+npm ci
+printf 'UID=%s\nGID=%s\n' "$(id -u)" "$(id -g)" > .env
+docker compose run --rm --user root --entrypoint chown site \
+  -R "$(id -u):$(id -g)" /usr/local/bundle
+make install
+make serve
+```
+
+`npm ci` installs Prettier and the Shopify Liquid plugin locally using
+`package-lock.json`. The `.env` file tells Compose to run Jekyll as your host
+user. The `chown` command makes the Docker gem volume writable by that user so
+`make install` can install the Jekyll gems. Open <http://localhost:3000> to
+preview the site and press `Ctrl+C` to stop the server.
+
+## Local development
+
+```bash
+make install   # refresh gems after Gemfile or Gemfile.lock changes
+make serve     # http://localhost:3000, live reload with drafts
+make drafts    # also includes future-dated posts
 make build     # production build into _site/
 make clean     # drop _site/ and caches
 make fmt       # format Markdown, YAML, Liquid templates and SCSS
 make fmt-check # verify formatting without writing (CI-friendly)
 ```
-
-`make serve` runs `docker compose up`, so `Ctrl-C` stops it. Gems are cached in
-a named Docker volume (`bundle`), so `make install` is only needed when
-`Gemfile` changes.
 
 ## Writing a post
 
@@ -60,9 +76,9 @@ formats Markdown (including post front matter), YAML, SCSS, JSON, and the Liquid
 HTML templates in `_layouts/`, `_includes/`, and `writing/`. Config lives in
 `.prettierrc`; build output and lock files are listed in `.prettierignore`.
 
-Run `make fmt` before committing, or `npm install && make fmt-check` after a
-fresh clone (dependencies live in `package.json`). It formats every file in the
-repo, so running it on a fresh clone should report no changes.
+Run `make fmt` before committing to apply formatting, or `make fmt-check` to
+check formatting without writing files. After `package-lock.json` changes, run
+`npm ci` again to install the updated versions.
 
 ## Structure
 
